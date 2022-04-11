@@ -4,47 +4,39 @@ using UnityEngine;
 
 public class ej1 : MonoBehaviour
 {
-    public string nombreAlumno="";
+    public string nombreAlumno = "";
     public int anio;
     public string orientacion; // T D G M H
-    // Start is called before the first frame update
+
     void Start()
     {
-        bool todoOK = true;
+        orientacion = orientacion.ToUpper();
+        //bool todoOK = true;
         if (nombreAlumno == "")
         {
             Debug.Log("Error, el nombre no puede estar vacío");
-            todoOK = false;
+            return;
         }
 
-        if (anio < 1 || anio > 5)
+        else if (anio < 1 || anio > 5)
         {
             Debug.Log("Error, el año ingresado no es válido.");
-            todoOK = false;
+            return;
         }
 
         else if (anio == 1 || anio == 2)
         {
             Debug.Log("Error, estás en ciclo básico.");
-            todoOK = false;
+            return;
         }
 
-        if (orientacion != "T" && orientacion != "D" && orientacion != "G" && orientacion != "M" && orientacion != "H")
+        else if (orientacion != "T" && orientacion != "D" && orientacion != "G" && orientacion != "M" && orientacion != "H")
         {
             Debug.Log("Error, la orientación ingresada no es válida");
-            todoOK = false;
+            return;
         }
+        Debug.Log(" “Muchas gracias "+nombreAlumno+"!");
 
-        if (todoOK)
-        {
-            Debug.Log(" “Muchas gracias "+nombreAlumno+"!");
-        }
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
