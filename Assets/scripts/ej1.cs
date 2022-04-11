@@ -23,6 +23,12 @@ public class ej1 : MonoBehaviour
             todoOK = false;
         }
 
+        else if (anio == 1 || anio == 2)
+        {
+            Debug.Log("Error, estás en ciclo básico.");
+            todoOK = false;
+        }
+
         if (orientacion != "T" && orientacion != "D" && orientacion != "G" && orientacion != "M" && orientacion != "H")
         {
             Debug.Log("Error, la orientación ingresada no es válida");
